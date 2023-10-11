@@ -1,0 +1,24 @@
+{config_load file="$language/lang_$language.conf" section="newsletter"}
+{config_load file="$language/lang_$language.conf" section="contact_us"}
+{config_load file="$language/lang_$language.conf" section="seen_cheaper"}
+{config_load file="lang_`$language`.custom"}
+
+Günstiger gesehen
+
+Ein Kunde hat einen Artikel günstiger gesehen und möchte wissen ob unser Preis unterboten werden kann.
+
+Artikel Daten
+Name: {$PRODUCT_NAME}
+Nummer: {$PRODUCT_MODEL}
+Link: {$PRODUCT_LINK}
+
+Mittbewerber Daten
+Mittbewerber URL: {$COMPETITOR_URL}
+Mittbewerber Preis: {$COMPETITOR_PRICE}
+
+Kunden Daten
+{$smarty.const.EMAIL_NAME} {$NAME}
+{$smarty.const.EMAIL_EMAIL} {$EMAIL}
+Telefon: {$PHONE}
+{$smarty.const.EMAIL_MESSAGE}
+{$MESSAGE}

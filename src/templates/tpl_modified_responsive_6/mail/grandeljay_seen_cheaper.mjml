@@ -1,0 +1,81 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-all font-family="sans-serif" />
+      <mj-divider border-width="1px" border-style="dashed" border-color="lightgrey" />
+      <mj-class name="table_heading" font-weight="bold" padding-bottom="0" />
+    </mj-attributes>
+    <mj-style>
+      td {
+        vertical-align: top;
+        width: 128px;
+      }
+    </mj-style>
+
+    <mj-preview>Ein Kunde hat einen Artikel günstiger gesehen und möchte wissen ob unser Preis unterboten werden kann.</mj-preview>
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+
+        <mj-text font-size="22px">Günstiger gesehen</mj-text>
+        <mj-text>Ein Kunde hat einen Artikel günstiger gesehen und möchte wissen ob unser Preis unterboten werden kann.</mj-text>
+
+        <mj-divider />
+
+        <mj-text mj-class="table_heading">Artikel Daten</mj-text>
+        <mj-table>
+          <tr>
+            <td>Name:</td>
+            <td>{$PRODUCT_NAME}</td>
+          </tr>
+          <tr>
+            <td>Nummer:</td>
+            <td>{$PRODUCT_MODEL}</td>
+          </tr>
+          <tr>
+            <td>Link:</td>
+            <td>{$PRODUCT_LINK}</td>
+          </tr>
+        </mj-table>
+
+        <mj-divider />
+
+        <mj-text mj-class="table_heading">Mittbewerber Daten</mj-text>
+        <mj-table>
+          <tr>
+            <td>Mittbewerber URL:</td>
+            <td>{$COMPETITOR_URL}</td>
+          </tr>
+          <tr>
+            <td>Mittbewerber Preis:</td>
+            <td>{$COMPETITOR_PRICE}</td>
+          </tr>
+        </mj-table>
+
+        <mj-divider />
+
+        <mj-text mj-class="table_heading">Kunden Daten</mj-text>
+        <mj-table>
+          <tr>
+            <td>{$smarty.const.EMAIL_NAME}</td>
+            <td>{$NAME}</td>
+          </tr>
+          <tr>
+            <td>{$smarty.const.EMAIL_EMAIL}</td>
+            <td>{$EMAIL}</td>
+          </tr>
+          <tr>
+            <td>Telefon:</td>
+            <td>{$PHONE}</td>
+          </tr>
+          <tr>
+            <td>{$smarty.const.EMAIL_MESSAGE}</td>
+            <td>{$MESSAGE}</td>
+          </tr>
+        </mj-table>
+
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
