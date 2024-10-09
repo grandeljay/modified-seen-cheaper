@@ -16,7 +16,7 @@ use Grandeljay\SeenCheaper\Constants;
 
 class grandeljay_seen_cheaper extends StdModule
 {
-    public const VERSION = '0.1.1';
+    public const VERSION = '0.1.2';
 
     public function __construct()
     {
