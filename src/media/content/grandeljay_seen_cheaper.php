@@ -132,6 +132,10 @@ if ('send' === $action) {
             $txt_mail  = $smarty->fetch(CURRENT_TEMPLATE . $email_template_txt);
             $txt_mail  = str_replace(array('<br />', '<br/>', '<br>'), '', $txt_mail);
         } else {
+            /**
+             * To do: fix sprintf format, since it requires five arguemnts and
+             * currently only three are given.
+             */
             $txt_mail  = sprintf(EMAIL_SENT_BY, parse_multi_language_value(CONTACT_US_NAME, $_SESSION['language_code']), parse_multi_language_value(CONTACT_US_EMAIL_ADDRESS, $_SESSION['language_code'])) . "\n" .
               "--------------------------------------------------------------" . "\n" .
               EMAIL_NAME . $name . "\n" .
