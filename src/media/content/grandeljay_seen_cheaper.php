@@ -13,6 +13,7 @@ defined('DISPLAY_PRIVACY_CHECK') or define('DISPLAY_PRIVACY_CHECK', 'true');
 require_once DIR_WS_LANGUAGES . $_SESSION['language'] . '/grandeljay_seen_cheaper.php';
 require_once DIR_FS_INC . 'parse_multi_language_value.inc.php';
 require_once DIR_FS_INC . 'secure_form.inc.php';
+require_once DIR_FS_INC . 'xtc_validate_email.inc.php';
 
 if (file_exists(DIR_FS_CATALOG . 'templates/' . CURRENT_TEMPLATE . '/source/inc/css_button.inc.php')) {
     require_once 'templates/' . CURRENT_TEMPLATE . '/source/inc/css_button.inc.php';
@@ -89,8 +90,8 @@ if ('send' === $action) {
     }
 
     if (false === $error) {
-        $email_template_html = '/mail/' . $_SESSION['language'] . '/seen-cheaper.html';
-        $email_template_txt  = '/mail/' . $_SESSION['language'] . '/seen-cheaper.txt';
+        $email_template_html = '/mail/' . $_SESSION['language'] . '/grandeljay_seen_cheaper.html';
+        $email_template_txt  = '/mail/' . $_SESSION['language'] . '/grandeljay_seen_cheaper.txt';
 
         $product_name  = '';
         $product_model = '';
