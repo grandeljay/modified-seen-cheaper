@@ -36,7 +36,7 @@ $error = false;
  * Send
  */
 if ('send' === $action) {
-    $valid_params = array(
+    $valid_params = [
         'name',
         'email',
         'phone',
@@ -44,7 +44,7 @@ if ('send' === $action) {
 
         'competitor_url',
         'competitor_price',
-    );
+    ];
 
     foreach ($_POST as $key => $value) {
         if ((!isset(${$key}) || !is_object(${$key})) && in_array($key, $valid_params)) {
@@ -130,7 +130,7 @@ if ('send' === $action) {
 
             $html_mail = $smarty->fetch(CURRENT_TEMPLATE . $email_template_html);
             $txt_mail  = $smarty->fetch(CURRENT_TEMPLATE . $email_template_txt);
-            $txt_mail  = str_replace(array('<br />', '<br/>', '<br>'), '', $txt_mail);
+            $txt_mail  = str_replace(['<br />', '<br/>', '<br>'], '', $txt_mail);
         } else {
             /**
              * To do: fix sprintf format, since it requires five arguemnts and
@@ -183,18 +183,18 @@ if ('success' === $action) {
                                                   AND ab.address_book_id = c.customers_default_address_id
               WHERE c.customers_id = ' . $_SESSION['customer_id']
         );
-        $customer_data   = xtc_db_fetch_array($customer_query);
-        $customer_data   = array_map('stripslashes', $customer_data);
-        $name     = empty($_POST['name'])
+        $customer_data  = xtc_db_fetch_array($customer_query);
+        $customer_data  = array_map('stripslashes', $customer_data);
+        $name           = empty($_POST['name'])
                   ? $_SESSION['customer_first_name'] . ' ' . $_SESSION['customer_last_name']
                   : $_POST['name'];
-        $email    = empty($_POST['email'])    ? $customer_data['customers_email_address'] : $_POST['email'];
-        $phone    = empty($_POST['phone'])    ? $customer_data['customers_telephone']     : $_POST['phone'];
-        $fax      = empty($_POST['fax'])      ? $customer_data['customers_fax']           : $_POST['fax'];
-        $company  = empty($_POST['company'])  ? $customer_data['entry_company']           : $_POST['company'];
-        $street   = empty($_POST['street'])   ? $customer_data['entry_street_address']    : $_POST['street'];
-        $postcode = empty($_POST['postcode']) ? $customer_data['entry_postcode']          : $_POST['postcode'];
-        $city     = empty($_POST['city'])     ? $customer_data['entry_city']              : $_POST['city'];
+        $email          = empty($_POST['email'])    ? $customer_data['customers_email_address'] : $_POST['email'];
+        $phone          = empty($_POST['phone'])    ? $customer_data['customers_telephone']     : $_POST['phone'];
+        $fax            = empty($_POST['fax'])      ? $customer_data['customers_fax']           : $_POST['fax'];
+        $company        = empty($_POST['company'])  ? $customer_data['entry_company']           : $_POST['company'];
+        $street         = empty($_POST['street'])   ? $customer_data['entry_street_address']    : $_POST['street'];
+        $postcode       = empty($_POST['postcode']) ? $customer_data['entry_postcode']          : $_POST['postcode'];
+        $city           = empty($_POST['city'])     ? $customer_data['entry_city']              : $_POST['city'];
     }
 
     $smarty->assign('CONTACT_CONTENT', $shop_content_data['content_text'] ?? '');

@@ -10,14 +10,14 @@
 
 use Grandeljay\SeenCheaper\Constants;
 
-$translations = array(
+$translations = [
     /** Module */
     'TITLE'            => 'grandeljay - Moins cher Vu ?',
     'TEXT_TILE'        => 'Moins cher Vu ?',
     'LONG_DESCRIPTION' => 'Affiche un lien "Vu moins cher ? Affiche un lien vers les pages de produits.',
     'STATUS_TITLE'     => 'Statut',
     'STATUS_DESC'      => 'Sélectionnez Oui pour activer le module et Non pour le désactiver.',
-);
+];
 
 foreach ($translations as $key => $text) {
     $constant = Constants::MODULE_NAME . '_' . $key;
